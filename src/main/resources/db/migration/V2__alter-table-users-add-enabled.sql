@@ -1,0 +1,3 @@
+ALTER TABLE users ADD COLUMN enabled BOOLEAN DEFAULT TRUE;
+
+UPDATE users SET enabled = TRUE;
