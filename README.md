@@ -2,20 +2,25 @@
 
 ![Badge-Spring](https://github.com/user-attachments/assets/6be9d3d2-dae7-464e-9fc3-365d13fcdcc0)
 
-Foro Hub es una aplicación diseñada para gestionar foros en línea, facilitando la interacción entre usuarios a través de tópicos y respuestas. El proyecto se desarrolló utilizando Spring Boot 3.4.1 y Java 21, aprovechando las últimas características y mejoras de estas tecnologías.
-## Características principales
+---
 
-- **Gestión de Tópicos:** Crear, leer, actualizar y eliminar tópicos.
-- **Gestión de Respuestas:** Añadir y manejar respuestas asociadas a tópicos.
-- **Gestión de Usuarios:** Administrar usuarios y sus interacciones con los tópicos y respuestas.
-- **Autenticación y Autorización:** Implementación de seguridad con Spring Security y JWT.
-- **Documentación de la API:** Generada automáticamente con Springdoc OpenAPI.
+## Project Description
+
+Foro Hub is an application designed to manage online forums, facilitating user interaction through topics and responses. The project was developed using **Spring Boot 3.4.1** and **Java 21**, leveraging the latest features and enhancements of these technologies.
+
+### Key Features:
+
+- **Topic Management:** Create, edit, delete, and list topics.
+- **Response Management:** Add and manage responses associated with topics.
+- **User Management:** Administer users and their interactions with topics and responses.
+- **Authentication and Authorization:** Implemented security with Spring Security and JWT.
+- **API Documentation:** Automatically generated with Springdoc OpenAPI.
 
 ---
 
-## Requisitos del Proyecto
+## Project Requirements
 
-### Dependencias Principales:
+### Main Dependencies:
 
 ```xml
 <dependencies>
@@ -68,89 +73,93 @@ Foro Hub es una aplicación diseñada para gestionar foros en línea, facilitand
 
 ---
 
-## Endpoints de la API
+## API Endpoints
 
 ### **Admin**
 
 #### User Controller
-- `GET /api/v1/user/{id}`: Obtener un usuario por ID.
-- `PUT /api/v1/user/{id}`: Actualizar un usuario.
-- `DELETE /api/v1/user/{id}`: Eliminar un usuario.
-- `PUT /api/v1/user/activate/{id}`: Activar un usuario.
-- `GET /api/v1/user`: Listar todos los usuarios.
-- `POST /api/v1/user`: Crear un nuevo usuario.
+
+- `GET /api/v1/user/{id}`: Get a user by ID.
+- `PUT /api/v1/user/{id}`: Update a user.
+- `DELETE /api/v1/user/{id}`: Delete a user.
+- `PUT /api/v1/user/activate/{id}`: Activate a user.
+- `GET /api/v1/user`: List all users.
+- `POST /api/v1/user`: Create a new user.
 
 #### Topic Controller
-- `GET /api/v1/topic/{id}`: Obtener un tópico por ID.
-- `PUT /api/v1/topic/{id}`: Actualizar un tópico.
-- `DELETE /api/v1/topic/{id}`: Eliminar un tópico.
-- `PUT /api/v1/topic/activate/{id}`: Activar un tópico.
-- `GET /api/v1/topic`: Listar todos los tópicos.
-- `POST /api/v1/topic`: Crear un nuevo tópico.
+
+- `GET /api/v1/topic/{id}`: Get a topic by ID.
+- `PUT /api/v1/topic/{id}`: Update a topic.
+- `DELETE /api/v1/topic/{id}`: Delete a topic.
+- `PUT /api/v1/topic/activate/{id}`: Activate a topic.
+- `GET /api/v1/topic`: List all topics.
+- `POST /api/v1/topic`: Create a new topic.
 
 #### Response Controller
-- `GET /api/v1/response/{id}`: Obtener una respuesta por ID.
-- `PUT /api/v1/response/{id}`: Actualizar una respuesta.
-- `DELETE /api/v1/response/{id}`: Eliminar una respuesta.
-- `PUT /api/v1/response/active/{id}`: Activar una respuesta.
-- `GET /api/v1/response`: Listar todas las respuestas.
-- `POST /api/v1/response`: Crear una nueva respuesta.
 
-### **User (Público)**
+- `GET /api/v1/response/{id}`: Get a response by ID.
+- `PUT /api/v1/response/{id}`: Update a response.
+- `DELETE /api/v1/response/{id}`: Delete a response.
+- `PUT /api/v1/response/active/{id}`: Activate a response.
+- `GET /api/v1/response`: List all responses.
+- `POST /api/v1/response`: Create a new response.
+
+### **User (Public)**
 
 #### Public Topic Controller
-- `GET /api/v1/public/topic/{id}`: Ver un tópico por ID.
-- `PUT /api/v1/public/topic/{id}`: Actualizar un tópico.
-- `DELETE /api/v1/public/topic/{id}`: Eliminar un tópico.
-- `GET /api/v1/public/topic`: Listar todos los tópicos.
-- `POST /api/v1/public/topic`: Crear un nuevo tópico.
+
+- `GET /api/v1/public/topic/{id}`: View a topic by ID.
+- `PUT /api/v1/public/topic/{id}`: Update a topic.
+- `DELETE /api/v1/public/topic/{id}`: Delete a topic.
+- `GET /api/v1/public/topic`: List all topics.
+- `POST /api/v1/public/topic`: Create a new topic.
 
 #### Public Response Controller
-- `GET /api/v1/public/response/{id}`: Ver una respuesta por ID.
-- `PUT /api/v1/public/response/{id}`: Actualizar una respuesta.
-- `DELETE /api/v1/public/response/{id}`: Eliminar una respuesta.
-- `GET /api/v1/public/response`: Listar todas las respuestas.
-- `POST /api/v1/public/response`: Crear una nueva respuesta.
+
+- `GET /api/v1/public/response/{id}`: View a response by ID.
+- `PUT /api/v1/public/response/{id}`: Update a response.
+- `DELETE /api/v1/public/response/{id}`: Delete a response.
+- `GET /api/v1/public/response`: List all responses.
+- `POST /api/v1/public/response`: Create a new response.
 
 #### Public User Controller
-- `GET /api/v1/public/user`: Listar usuarios públicos.
-- `GET /api/v1/public/user/{id}`: Obtener detalles de un usuario público.
 
-### **Autenticación**
+- `GET /api/v1/public/user`: List public users.
+- `GET /api/v1/public/user/{id}`: Get details of a public user.
+
+### **Authentication**
 
 #### Auth Controller
-- `POST /api/v1/auth/register`: Registrar un usuario.
-- `POST /api/v1/auth/refresh`: Refrescar un token JWT.
-- `POST /api/v1/auth/logout`: Cerrar sesión.
-- `POST /api/v1/auth/login`: Iniciar sesión.
+
+- `POST /api/v1/auth/register`: Register a user.
+- `POST /api/v1/auth/refresh`: Refresh a JWT token.
+- `POST /api/v1/auth/logout`: Log out.
+- `POST /api/v1/auth/login`: Log in.
 
 ---
 
-## Instalación
+## Installation
 
-1. Clonar el repositorio:
+1. Clone the repository:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone <REPOSITORY_URL>
    ```
-2. Configurar la base de datos en el archivo `application.properties` o `application.yml`.
-3. Ejecutar las migraciones con Flyway.
-4. Ejecutar la aplicación:
+2. Configure the database in the `application.properties` or `application.yml` file.
+3. Run migrations using Flyway.
+4. Start the application:
    ```bash
-   mvn spring-boot:run
+   ./mvnw spring-boot:run
    ```
 
 ---
 
-## Contribuciones
-Las contribuciones son bienvenidas. Si deseas colaborar, por favor, abre un issue o un pull request.
+## Contributions
+
+Contributions are welcome. If you want to contribute, please open an issue or a pull request.
 
 ---
 
-## Licencia
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo `LICENSE`.
+## Contact
 
----
-
-## Contacto
-Para más información, puedes contactarnos en [felricharde42@gmail.com](mailto:felricharde42@gmail.com).
+For more information, you can reach us at [felricharde42@gmail.com](mailto:felricharde42@gmail.com).
 
